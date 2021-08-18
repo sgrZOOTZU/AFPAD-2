@@ -1,0 +1,9 @@
+--Q1--
+SELECT CONCAT(emp_lastname,' ',emp_firstname) AS Employé, emp_children AS Nb_enfants 
+FROM employees 
+ORDER BY emp_children DESC, CONCAT(emp_lastname,' ',emp_firstname) ASC
+LIMIT 5
+--Q1--
+--Q2--
+
+--Q2--
