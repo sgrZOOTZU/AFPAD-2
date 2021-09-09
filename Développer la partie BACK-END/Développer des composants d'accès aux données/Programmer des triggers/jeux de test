@@ -1,0 +1,23 @@
+ 
+=============Jeux de TEST=============
+UPDATE products 
+SET pro_stock = 2,
+    pro_stock_alert = 5 
+WHERE pro_id = 8
+============== CAS N°1 ===============
+UPDATE products 
+SET pro_stock = 6,
+    pro_stock_alert = 5
+WHERE pro_id = 8;
+============== CAS N°2 ===============
+UPDATE products 
+SET pro_stock = 4,
+    pro_stock_alert = 5
+WHERE pro_id = 8;
+============== CAS N°3 ===============
+UPDATE products 
+SET pro_stock = 3,
+    pro_stock_alert = 5
+WHERE pro_id = 8;
+======================================
+
