@@ -1,3 +1,6 @@
+<?php
+  $erreur = $_GET["erreur"];
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -7,8 +10,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+    <!-- Link JS -->
     <script src="script.js"></script>
-    <title>Jarditou Bootstrap</title>
+
+    <title>Jarditou</title>
+
+
   </head>
   <body>
 
@@ -44,7 +52,7 @@
                 <a class="nav-link" href="tableau.html">Tableau</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                <a class="nav-link" href="contact.php" tabindex="-1" aria-disabled="true">Contact</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -60,22 +68,22 @@
 
     <div class="row">
       <div class="col-12">
-        <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact">
+        <form action="script.php" method="POST" id="formulaire">
           <fieldset>
           <h1> Vos coordonnées</h1>
           <p> *Ces zones sont obigatoire </p>
           <label for="formGroupExampleInput">Nom*</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" name="nom" placeholder="Veuillez saisir votre nom" required><br>
+          <input type="text" class="form-control" <?= $erreur=='nom'?"border border-danger":"" ?> id="formGroupExampleInput" name="nom" placeholder="Veuillez saisir votre nom" required><br>
           <label for="formGroupExampleInput">Prénom*</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" name="prenom" placeholder="Veuillez saisir votre Prénom" required><br>
-          <label for="radio">Sexe*:</label><br>    
+          <input type="text" class="form-control" <?= $erreur=='nom'?"border border-danger":"" ?> id="formGroupExampleInput" name="prenom" placeholder="Veuillez saisir votre Prénom" required><br>
+          <label for="radio">Sexe*:</label><br>
           <div>
           <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="Sexe" id="inlineRadio1" value="Féminin" required>
+              <input class="form-check-input" type="radio" name="Sexe" id="inlineRadio1" value="Féminin" >
               <label class="form-check-label" for="inlineRadio1">Féminin</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="Sexe" id="inlineRadio2" value="Masculin" required>
+              <input class="form-check-input" type="radio" name="Sexe" id="inlineRadio2" value="Masculin" >
               <label class="form-check-label" for="inlineRadio2">Masculin</label>
             </div>
           </div>
@@ -91,11 +99,11 @@
             </div>  
               <div class="form-group">
                 <label for="formGroupExampleInput">Address</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="adresse">
+                <input type="text" class="form-control" id="formGroupExampleInput" name="adresse" >
               </div>
             <div class="form-group">
               <label for="formGroupExampleInput">Ville</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name="ville">
+              <input type="text" class="form-control" id="formGroupExampleInput" name="ville" >
             </div>
           <div class="form-group">
               <label for="exampleInputEmail1">Email*</label>
